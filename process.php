@@ -21,10 +21,10 @@ if (!empty($errors)) {
    
     
     include_once 'UploadImageHelper.php';
-
+if (strlen($_POST['month'])<2){$month='0'.$_POST['month'];}else{$month=$_POST['month'];}
 // return all our data to an AJAX call
 //echo json_encode($data);
-    $dir = $_POST['year'] . "/" . $_POST['month'] ;
+    $dir = $_POST['year'] . "/" . $month ;
 // Open a known directory, and proceed to read its contents
 //$dir = "2014/01";
     $dh = opendir($dir);
